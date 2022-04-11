@@ -71,17 +71,14 @@
                     <button type="submit" value="Register" class="login100-form-btn">
                        <b th:text="#{sign_up}"></b>
                     </button>
-
-                    <div>
-                        <span th:text="#{lang.change}+' --> '"></span>
-                        <a href="/?lang=en-US" th:text="#{language.en}+', '"></a>
-                        <a href="/?lang=hy-AM" th:text="#{language.arm}+', '"></a>
-                        <a href="/?lang=ru-RU" th:text="#{language.ru}"></a>
-                    </div>
-
                 </div>
             </form>
-
+            <div>
+                <span th:text="#{lang.change}+' --> '"></span>
+                <a class="txt2" href="/?lang=en-US" th:text="#{language.en}+', '"></a>
+                <a class="txt2" href="/?lang=hy-AM" th:text="#{language.arm}+', '"></a>
+                <a class="txt2" href="/?lang=ru-RU" th:text="#{language.ru}"></a>
+            </div>
         </div>
     </div>
 </div>
