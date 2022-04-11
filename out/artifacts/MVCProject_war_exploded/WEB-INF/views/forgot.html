@@ -1,0 +1,43 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="#{forgotOR}"></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" th:href="@{../../static/images/icons/favicon.ico}"/>
+    <!--===============================================================================================-->
+    <link th:href="@{../../static/css/util.css}" rel="stylesheet" type="text/css">
+    <!--===============================================================================================-->
+    <link th:href="@{../../static/css/main.css}" rel="stylesheet" type="text/css">
+    <!--===============================================================================================-->
+</head>
+<body>
+<div class="limiter">
+    <div class="container-login100">
+        <h1 style="color: #ffffff" align="center" th:text="#{forgotOR}">?</h1>
+        <form action="/forgotUsername" th:method="GET" class="login100-form validate-form">
+            <div class="container-login100-form-btn">
+                <button type="submit" value="Username" class="login100-form-btn" th:text="#{forUser}">
+                </button>
+            </div>
+        </form>
+        <form action="/forgotPassword" th:method="GET" class="login100-form validate-form">
+            <div class="container-login100-form-btn">
+                <button type="submit" value="Password" class="login100-form-btn" th:text="#{forPass}">
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<style>
+    td {
+        border: 2px solid #ffffff;
+        color: white;
+        text-align: center;
+    }
+
+    table {
+        margin: 120px;
+    }
+</style>
+</body>
+</html>

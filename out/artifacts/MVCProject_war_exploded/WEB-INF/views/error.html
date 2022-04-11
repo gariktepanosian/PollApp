@@ -1,0 +1,25 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${errorPage}"></title>
+    <link rel="icon" type="image/png" th:href="@{../../static/images/icons/error.ico}"/>
+    <link th:href="@{../../static/css/error.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+<section class="notFound">
+    <div class="img">
+        <img th:src="@{../../static/images/Delorean.webp}" alt="Back to the Homepage">
+        <img th:src="@{../../static/images/backToTheHomepage.webp}" alt="El Delorean, El Doc y Marti McFly">
+    </div>
+    <div class="text">
+
+        <div th:if="${errorPage}!=null">
+            <h1 style="color: red" th:text="${errorPage}"></h1>
+        </div>
+        <h2 th:text="#{lookForErr}"></h2>
+        <h3 th:text="#{backToHome}"></h3>
+        <a th:href="@{/}" class="yes" th:text="#{yes}"></a>
+        <a href="https://github.com/gtepanosyan" th:text="#{no}"></a>
+    </div>
+</section>
+</body>
+</html>

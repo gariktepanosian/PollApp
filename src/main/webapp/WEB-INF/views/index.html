@@ -1,0 +1,96 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="#{login_button}"></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" th:href="@{../../static/images/icons/favicon.ico}"/>
+    <!--===============================================================================================-->
+    <link th:href="@{../../static/css/util.css}" rel="stylesheet" type="text/css">
+    <!--===============================================================================================-->
+    <link th:href="@{../../static/css/main.css}" rel="stylesheet" type="text/css">
+    <!--===============================================================================================-->
+</head>
+<body>
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <div class="login100-pic js-tilt" data-tilt>
+                <img th:src="@{../../static/images/img-01.png}" alt="IMG">
+            </div>
+            <form action="/login" th:method="POST" class="login100-form validate-form">
+					<span class="login100-form-title" th:text="#{greeting}">
+                           <div th:if="${logout}!= null" style="color: #a81bb2; font-size: 20px">
+                    <p style="color: #57b846" th:text="${logout}"> </p>
+            </div>
+            <div th:if="${errorMassage}!=null" style="color: red; font-size: 20px">
+                    <p style="color: red" th:text="${errorMassage}"></p>
+            </div>
+            <div th:if="${registerMessage}!=null" style="color: #a81bb2; font-size: 20px">
+                <p style="color: rebeccapurple" th:text="${registerMessage}"></p>
+            </div>
+            <div th:if="${changePass}!=null" style="color: #a81bb2; font-size: 20px">
+                <p style="color: rebeccapurple" th:text="${changePass}"></p>
+            </div>
+                        <div th:if="${changeUsername}!=null" style="color: #a81bb2; font-size: 20px">
+                <p style="color: rebeccapurple" th:text="${changeUsername}"></p>
+            </div>
+					</span>
+
+                <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                    <input class="input100" type="text" th:name="username" id="username" th:placeholder="#{login}">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+							<i class="fa fa-user-circle-o" aria-hidden="true"></i>
+						</span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Password is required">
+                    <input class="input100" type="password" th:name="password" id="password" th:placeholder="#{pass}">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+                </div>
+                <div class="container-login100-form-btn">
+                    <button type="submit" class="login100-form-btn">
+                        <b th:text="#{login_button}"></b>
+                    </button>
+
+                </div>
+
+                <div class="text-center p-t-12">
+                    <a class="txt2" th:href="@{/forgot}" th:text="#{remember}"/>
+                </div>
+
+                <div class="text-center p-t-136">
+                </div>
+            </form>
+            <form action="/register" th:method="GET"
+                  class="register100-form validate-form">
+                <div class="container-login100-form-btn">
+                    <button type="submit" value="Register" class="login100-form-btn">
+                       <b th:text="#{sign_up}"></b>
+                    </button>
+
+                    <div>
+                        <span th:text="#{lang.change}+' --> '"></span>
+                        <a href="/?lang=en-US" th:text="#{language.en}+', '"></a>
+                        <a href="/?lang=hy-AM" th:text="#{language.arm}+', '"></a>
+                        <a href="/?lang=ru-RU" th:text="#{language.ru}"></a>
+                    </div>
+
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+<script>
+    $('.js-tilt').tilt({
+        scale: 1.1
+    })
+</script>
+<!--===============================================================================================-->
+<script th:src="@{../../static/js/main.js}"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{css/question.css}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" th:href="@{../../static/images/icons/favicon.ico}"/>
+    <!--===============================================================================================-->
+    <link th:href="@{../../static/css/util.css}" rel="stylesheet" type="text/css">
+    <!--===============================================================================================-->
+    <link th:href="@{../../static/css/main.css}" rel="stylesheet" type="text/css">
+    <!--===============================================================================================-->
+    <title th:text="#{questionSelection}"></title>
+</head>
+<body>
+<div class="limiter">
+    <div class="container-login100">
+        <form th:action="@{/results}" th:method="GET">
+            <div th:each="question : ${questions}">
+                <input type="hidden" name="questionId" th:value="${question.getId()}">
+
+                <p class="question" th:text="${question.getId()} + '. ' + ${question.getText()}"></p>
+
+                <div th:each="answer : ${answers}">
+                    <div th:if="${question.getId()} == ${answer.getQuestion_id()}">
+
+                        <input class="answer" type="radio" th:name="marked+${question.id}" th:value="${answer.getWeight()}"
+                               th:text="${answer.getText()}" >
+                    </div>
+                </div>
+            </div>
+            <input type="submit" name="done" class="creat" th:value="#{done}"/>
+        </form>
+    </div>
+</div>
+</body>
+</html>
+

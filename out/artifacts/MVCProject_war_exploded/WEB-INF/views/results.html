@@ -1,0 +1,38 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{css/results.css}">
+    <title th:text="#{pollResult}"></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" th:href="@{../../static/images/icons/favicon.ico}"/>
+    <!--===============================================================================================-->
+    <link th:href="@{../../static/css/util.css}" rel="stylesheet" type="text/css">
+    <!--===============================================================================================-->
+    <link th:href="@{../../static/css/main.css}" rel="stylesheet" type="text/css">
+    <!--===============================================================================================-->
+</head>
+<body>
+<div class="limiter">
+    <div class="container-login100">
+        <h2 class="title" th:text="#{pollResult}">:</h2>
+
+        <div th:if="${poll_error} != null">
+            <p style="font-size: 25px; color: #861aea; margin-top: -410px;
+    padding-left: 700px; display: inline-block;
+    align-items: center" th:text="${poll_error} + ${poll_result.getPoll_result()}"> <br>
+            </p>
+        </div>
+        <p class="description" th:text="'Result-' + ${userResult.getPoll_result()}"> <p/>
+
+        <form action="/logout" th:method="POST" class="login100-form">
+            <div class="container-login100-form-btn">
+                <button type="submit"  value="Log out" class="login100-form-btn" >
+                    <b th:text="#{logout}"></b>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

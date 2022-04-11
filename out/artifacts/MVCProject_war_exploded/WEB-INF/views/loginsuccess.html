@@ -1,0 +1,68 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="#{home}"></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" th:href="@{../../static/images/icons/favicon.ico}"/>
+    <!--===============================================================================================-->
+    <link th:href="@{../../static/css/util.css}" rel="stylesheet" type="text/css">
+    <!--===============================================================================================-->
+    <link th:href="@{../../static/css/main.css}" rel="stylesheet" type="text/css">
+    <!--===============================================================================================-->
+</head>
+<body>
+<div class="limiter">
+    <div class="container-login100">
+        <h1 style="color: #ffffff" align="center" th:text="#{home}"></h1>
+        <table cellpadding="2" border="2" align="center">
+            <tr>
+                <td th:text="#{name}"></td>
+                <td th:text="#{email}"></td>
+                <td th:text="#{login}"></td>
+                <td th:text="#{pass}"></td>
+                <td th:text="#{address}"></td>
+                <td th:text="#{contact}"></td>
+                <td th:text="#{date}"></td>
+                <td th:text="#{result}"></td>
+            </tr>
+            <tr>
+                <td th:text ="${user.getFirst_name()}"></td>
+                <td th:text ="${user.getEmail()}"></td>
+                <td th:text ="${user.getUsername()}"></td>
+                <td th:text ="${user.getPassword()}"></td>
+                <td th:text ="${user.getAddress()}"></td>
+                <td th:text ="${user.getContact()}"></td>
+                <td th:text ="${user.getDate()}"></td>
+                <td th:text ="${user.getPoll_result()}"></td>
+            </tr>
+        </table>
+        <form action="/poll" th:method="GET" class="login100-form">
+            <div class="container-login100-form-btn">
+                <button type="submit" value="Poll" class="login100-form-btn">
+                    <b th:text="#{poll}"></b>
+                </button>
+            </div>
+        </form>
+
+    <form action="/logout" th:method="POST" class="login100-form">
+        <div class="container-login100-form-btn">
+            <button type="submit"  value="Log out" class="login100-form-btn" >
+                <b th:text="#{logout}"></b>
+            </button>
+        </div>
+    </form>
+    </div>
+</div>
+<style>
+    td {
+        border: 2px solid #ffffff;
+        color: white;
+        text-align: center;
+    }
+
+    table {
+        margin: 120px;
+    }
+</style>
+</body>
+</html>
