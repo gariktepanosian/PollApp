@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
-    <link rel="icon" type="image/png" th:href="@{../../static/images/icons/favicon.ico}"/>
+    <link rel="icon" type="image/png" th:href="@{../../static/images/favicon.ico}"/>
     <!--===============================================================================================-->
     <link th:href="@{../../static/css/util.css}" rel="stylesheet" type="text/css">
     <!--===============================================================================================-->
@@ -12,12 +12,11 @@
     <!--===============================================================================================-->
 </head>
 <body>
-
 <div class="limiter">
     <div class="container-login100">
         <div class="wrap-login100">
             <div class="login100-pic js-tilt" data-tilt>
-                <img th:src="@{../../images/img-01.png}" alt="IMG">
+                <img th:src="@{../../static/images/img-01.png}" alt="IMG">
             </div>
             <form action="/register" th:method="POST" class="login100-form validate-form">
 					<span class="login100-form-title" th:text="#{title}">
@@ -75,7 +74,7 @@
                 <div class="text-center p-t-136">
                 </div>
             </form>
-            <form action="/login" th:method="POST">
+            <form action="/" th:method="GET">
                 <div class="container-login100-form-btn">
                     <button type="submit" value="Login" class="login100-form-btn">
                         <b th:text="#{login_button}"></b>
@@ -85,12 +84,5 @@
         </div>
     </div>
 </div>
-<script>
-    $('.js-tilt').tilt({
-        scale: 1.1
-    })
-</script>
-<!--===============================================================================================-->
-<script th:src="@{../../js/main.js}"></script>
 </body>
 </html>
