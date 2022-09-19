@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
-    <link rel="icon" type="image/png" th:href="@{../../static/images/icons/favicon.ico}"/>
+    <link rel="icon" type="image/png" th:href="@{../../static/images/favicon.ico}"/>
     <!--===============================================================================================-->
     <link th:href="@{../../static/css/util.css}" rel="stylesheet" type="text/css">
     <!--===============================================================================================-->
@@ -61,33 +61,33 @@
                 <div class="text-center p-t-12">
                     <a class="txt2" th:href="@{/forgot}" th:text="#{remember}"/>
                 </div>
+            </form>
 
-                <div class="text-center p-t-136">
+            <div class="flags js-tilt" data-tilt>
+                <div class="btn-text-changer">
+                    <form action="/register" th:method="GET"
+                          class="register100-form validate-form">
+                        <div class="container-login100-form-btn">
+                            <button type="submit" value="Register" class="login100-form-btn">
+                                <b th:text="#{sign_up}"></b>
+                            </button>
+                        </div>
+                    </form>
                 </div>
-            </form>
-            <form action="/register" th:method="GET"
-                  class="register100-form validate-form">
-                <div class="container-login100-form-btn">
-                    <button type="submit" value="Register" class="login100-form-btn">
-                       <b th:text="#{sign_up}"></b>
-                    </button>
+                <div class="language-changer">
+                <a class="txt2" href="/?lang=en-US">
+                <img th:src="@{../../static/images/us.png}" th:title="us_flag" alt="IMG">
+                </a>
+                <a class="txt2" href="/?lang=hy-AM">
+                <img th:src="@{../../static/images/armenia.png}" th:title="arm_flag" alt="IMG">
+                </a>
+                <a class="txt2" href="/?lang=ru-RU">
+                <img th:src="@{../../static/images/russia.png}" th:title= "ru_flag" alt="IMG">
+                </a>
                 </div>
-            </form>
-            <div>
-                <span th:text="#{lang.change}+' --> '"></span>
-                <a class="txt2" href="/?lang=en-US" th:text="#{language.en}+', '"></a>
-                <a class="txt2" href="/?lang=hy-AM" th:text="#{language.arm}+', '"></a>
-                <a class="txt2" href="/?lang=ru-RU" th:text="#{language.ru}"></a>
             </div>
         </div>
     </div>
 </div>
-<script>
-    $('.js-tilt').tilt({
-        scale: 1.1
-    })
-</script>
-<!--===============================================================================================-->
-<script th:src="@{../../static/js/main.js}"></script>
 </body>
 </html>

@@ -20,7 +20,6 @@ create table employee
 alter table employee
     add primary key (id);
 
-
 create table poll
 (
     id          bigint auto_increment,
